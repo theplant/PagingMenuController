@@ -15,6 +15,7 @@ public protocol MenuViewCustomizable {
     var animationDuration: TimeInterval { get }
     var deceleratingRate: CGFloat { get }
     var selectedItemCenter: Bool { get }
+    var isAutoSelectAtScrollEnd: Bool { get }
     var displayMode: MenuDisplayMode { get }
     var focusMode: MenuFocusMode { get }
     var dummyItemViewsSet: Int { get }
@@ -41,6 +42,9 @@ public extension MenuViewCustomizable {
     }
     var selectedItemCenter: Bool {
         return true
+    }
+    var isAutoSelectAtScrollEnd: Bool {
+        return false
     }
     var displayMode: MenuDisplayMode {
         return .standard(widthMode: .flexible, centerItem: false, scrollingMode: .pagingEnabled)
